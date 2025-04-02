@@ -43,7 +43,6 @@ An advanced eCommerce web application built with modern technologies, providing 
 ### 1️⃣ Clone the Repository
 ```sh
 git clone https://github.com/ankuraaryan5/shopSphere.git
-cd ecommerce-app
 cd frontend
 npm i
 npm run dev
