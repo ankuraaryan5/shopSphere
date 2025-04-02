@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Header from "./Header";
+import Navbar from "./Navbar";
+import Offers from "./Offers";
+import Category from "./Category";
+import Brands from "./Brands";
 
 const images = [
   "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -8,7 +13,7 @@ const images = [
 
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const saleType = "summer";
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -18,6 +23,8 @@ function Home() {
 
   return (
     <div>
+      <Header />
+      <Navbar />
       <div className="w-full relative overflow-hidden">
         <div className="absolute bottom-1/2 left-1/2 transform -translate-x-1/2 flex gap-3 z-10">
           <button className="bg-white text-black px-4 py-2 rounded-md">
@@ -67,9 +74,9 @@ function Home() {
             Women's Clothing
           </h1>
         </div>
-        <div className="flex flex-col justify-center items-center text-white text-2xl font-bold gap-4 w-full">
+        <div className="flex flex-col justify-center items-center text-white text-2xl font-bold gap-4 w-full h-96">
           <div
-            className=" flex justify-center items-center border-2 border-white md:h-48 w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 transform hover:scale-105 h-96 "
+            className=" flex justify-center items-center border-2 border-white md:h-48 w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 transform hover:scale-105 h-full"
             style={{
               backgroundImage: `url("https://images.unsplash.com/photo-1608739872119-f78feab7f976?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
             }}
@@ -78,9 +85,9 @@ function Home() {
               Men's Clothing
             </h1>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:h-48 h-96">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:h-48">
             <div
-              className=" flex justify-center items-center border-2 border-white p-4 w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 transform hover:scale-105 h-96 md:h-full"
+              className=" flex justify-center items-center border-2 border-white p-4 w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 transform hover:scale-105  md:h-full"
               style={{
                 backgroundImage: `url("https://images.unsplash.com/photo-1741992556912-3b2d62461e75?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
               }}
@@ -90,7 +97,7 @@ function Home() {
               </h1>
             </div>
             <div
-              className=" flex justify-center items-center border-2 border-white p-4 w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 transform hover:scale-105 h-96 md:h-full"
+              className=" flex justify-center items-center border-2 border-white p-4 w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 transform hover:scale-105 md:h-full"
               style={{
                 backgroundImage: `url("https://images.unsplash.com/photo-1709257232578-79b3419e87f1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
               }}
@@ -102,6 +109,8 @@ function Home() {
           </div>
         </div>
       </div>
+      <Offers saleType={saleType} />
+      <Brands />
     </div>
   );
 }
