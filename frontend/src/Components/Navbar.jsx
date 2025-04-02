@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaUser, FaShoppingCart } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,10 +25,12 @@ function Navbar() {
           />
         </div>
         <div className="flex justify-end gap-4 items-center">
+          <Link to="/login">
           <button className="flex items-center gap-2 bg-blue-500 px-3 py-2 rounded-md">
             <FaUser />
             <p>Auth</p>
           </button>
+          </Link>
           <button className="flex items-center gap-2 bg-green-500 px-3 py-2 rounded-md">
             <FaShoppingCart />
             <p>Cart</p>
