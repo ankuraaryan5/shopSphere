@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Offers from "./Offers";
-import Category from "./Category";
 import Brands from "./Brands";
 
 const images = [
