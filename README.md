@@ -1,6 +1,6 @@
-### Made with ❤️ by Your Name
+### Made with ❤️ by Ankur
 
-# ShopSphere? 🛍️
+# ShopSphere 🛍️
 An advanced eCommerce web application built with modern technologies, providing a seamless shopping experience with features like product listings, cart management, authentication, and payments.
 
 ## 🚀 Features
